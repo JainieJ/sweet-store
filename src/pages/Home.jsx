@@ -6,10 +6,10 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <>
+      <header id="header">
         <NavBar />
         <Header />
-      </>
+      </header>
     );
   }
 }

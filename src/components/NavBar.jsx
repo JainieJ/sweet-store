@@ -1,7 +1,72 @@
 import React from "react";
+import logo from "../img/logo.svg";
 
 const NavBar = () => {
-  return <h1>Hello from NavBar</h1>;
+  return (
+    <nav className="navbar navbar-expand-lg px-4">
+      <a className="navbar-brand" href="/">
+        <img src={logo} alt="cake" style={{ width: "40px", height: "40px" }} />
+      </a>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span className="navbar-toggler-icon">
+          <i className="fas fa-bars" />
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav text-capitalize mx-auto">
+          <li className="nav-item active">
+            <a href="#header" className="nav-link">
+              home
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#about" className="nav-link">
+              about
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#store" className="nav-link">
+              store
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#services" className="nav-link">
+              services
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#order" className="nav-link">
+              order
+            </a>
+          </li>
+        </ul>
+        <div className="nav-info-items d-none d-lg-flex">
+          {/* single info */}
+          <div className="nav-info align-items-center d-flex justify-content-between">
+            <span className="info-icon mx-lg-3">
+              <i className="fas fa-phone" />
+            </span>
+            <p className="mb-0">+ 123 456 789</p>
+          </div>
+          {/* single info */}
+          <div className="cart-info nav-info align-items-center d-flex justify-content-between">
+            <span className="cart-info__icon ml-lg-3">
+              <i className="fas fa-shopping-cart" />
+              <p className="mb-0 text-capitalize">
+                <span id="item-count">2</span>
+                items - $<span className="item-total">10.49</span>
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default NavBar;
