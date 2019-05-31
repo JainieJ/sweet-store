@@ -14,7 +14,7 @@ const NavBar = () => {
         data-toggle="collapse"
         data-target="#navbarNav"
       >
-        <span className="navbar-toggler-icon">
+        <span className="navbar-toggler-icon my-3">
           <i className="fas fa-bars" />
         </span>
       </button>
