@@ -1,0 +1,27 @@
+@import "../../index.scss";
+
+.max-height {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient($yellowTrans, $yellowTrans),
+    url(../../img/bg-banner.jpg) center/cover no-repeat fixed; //Photo by Ylanite Koppens from Pexels
+  position: relative;
+}
+
+.banner {
+  color: $mainWhite;
+}
+
+.banner-title {
+  color: $mainPink;
+  font-size: 4rem;
+}
+
+.banner-link {
+  font-size: 1.5rem;
+  color: $mainBlack;
+  border: 0.2rem solid $mainBlack;
+  &:hover {
+    background: $mainBlack;
+    color: $mainPink;
+  }
+}
