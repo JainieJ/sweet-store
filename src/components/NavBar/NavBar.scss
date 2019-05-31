@@ -1,0 +1,41 @@
+@import "../../index.scss";
+
+.navbar-toggler {
+  outline: none !important;
+}
+
+.navbar-toggler-icon {
+  color: $mainPink;
+  font-size: 2.5rem;
+}
+
+.nav-link {
+  color: $mainPink;
+  transition: all 1s ease-in-out;
+  font-size: 1.5rem;
+  &:hover {
+    color: $mainBlack;
+  }
+}
+//  cart style
+
+.cart-info__icon {
+  color: $mainBlack;
+  cursor: pointer;
+}
+
+.cart-info {
+  border: 0.1rem solid $mainBlack;
+  color: $mainBlack;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  &:hover {
+    background: $mainPink;
+    border-color: $mainPink;
+    color: $mainWhite;
+    .cart-info__icon {
+      color: $mainWhite;
+    }
+  }
+}
