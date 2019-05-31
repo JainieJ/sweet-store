@@ -1,17 +1,15 @@
 import React from "react";
 import "./Header.scss";
+import Title from "../utilities/Title";
+import Button from "../utilities/Button";
 
 const Header = () => {
   return (
     <div className="container-fluid">
       <div className="row max-height justify-content-center align-items-center">
         <div className="col-10 mx-auto banner text-center">
-          <h1 className="text-capitalize">
-            welcome to our <strong className="banner-title">sweet store</strong>
-          </h1>
-          <a href="#store" className="btn text-uppercase banner-link my-2">
-            explore
-          </a>
+          <Title text1="welcome to our" text2="sweet store" />
+          <Button link="#store" />
         </div>
       </div>
     </div>
