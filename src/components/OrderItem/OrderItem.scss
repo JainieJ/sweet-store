@@ -1,0 +1,17 @@
+@import "../../index.scss";
+
+.order-link {
+  color: $mainPink;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 0.2rem solid $mainPink;
+  &:hover {
+    background: $mainBlack;
+    color: $mainPink;
+  }
+}
+
+.order-img {
+  height: 10rem;
+  width: 10rem;
+}
