@@ -24,7 +24,7 @@ class About extends Component {
             <div className="col-10 mx-auto col-md-6 my-5 align-self-center">
               <div className="about-image__container">
                 <img
-                  src="./img/about-picture.jpg"
+                  src="./img/about-picture.jpg" //Photo by Suzy Hazelwood from Pexels
                   alt="cake"
                   className="img-fluid"
                 />

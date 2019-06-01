@@ -1,0 +1,38 @@
+@import "../../index.scss";
+
+.single-item {
+  transition: all 0.3 linear;
+  &:hover {
+    box-shadow: 0 10px 15px rgb(0, 0, 0);
+  }
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover .store-img {
+    transform: scale(1.2);
+  }
+  &:hover .store-item-icon {
+    transform: translate(0, 0);
+  }
+}
+
+.store-img {
+  transition: all 1s ease-in-out;
+}
+
+.store-item-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.8rem;
+  background: $mainYellow;
+  border-top-left-radius: 1rem;
+  transition: all 1s ease-in-out;
+  transform: translate(100%, 100%);
+  &:hover {
+    color: $mainWhite;
+  }
+}
