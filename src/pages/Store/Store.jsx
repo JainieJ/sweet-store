@@ -4,14 +4,21 @@ import Search from "./../../components/Search/Search";
 import { buttonTitle } from "../../data/buttonTitles";
 import StoreItems from "../../components/StoreItems/StoreItems";
 import { storeItems } from "../../data/storeItems";
-import "./Store.scss";
 import SortButton from "./../../components/utilities/SortButton";
+import Cart from "./../../components/Cart/Cart";
+import "./Store.scss";
 
 class Store extends Component {
   state = {
     search: "",
     items: storeItems,
-    filtered: storeItems
+    filtered: storeItems,
+    showCart: false
+  };
+  toggleCartDisplay = () => {
+    this.setState({ showCart: !this.state.showCart }, () =>
+      console.log(this.state.showCart)
+    );
   };
   handleSort = ({ target: { name: title } }) => {
     //destruturing of event object
@@ -38,9 +45,11 @@ class Store extends Component {
     this.setState({ filtered, search: "" });
   };
   render() {
-    const { search, items, filtered } = this.state;
+    const { search, items, filtered, showCart } = this.state;
     return (
       <section id="store" className="store py-5">
+        {/* cart */}
+        <Cart toggleCartDisplay={this.toggleCartDisplay} showCart={showCart} />
         <div className="container">
           {/* title */}
           <div className="row my-3">

@@ -1,23 +1,18 @@
 @import "../../index.scss";
+
+// detailed cart
+
 .cart {
-  position: absolute;
+  position: fixed;
   min-height: 10rem;
-  background: rgba(142, 123, 117, 0.7);
+  background: rgb(142, 123, 117);
   top: 0;
   right: 0;
   transition: all 0.3s ease-in-out;
-  width: 20rem;
+  width: 22rem;
   padding: 2rem 1.5rem;
+  z-index: 1;
 }
-// .show-cart {
-//   width: 20rem;
-//   padding: 2rem 1.5rem;
-//   transform: rotateY(-360deg);
-// }
-
-// .cart-item {
-//   transition: all 2s ease-in-out;
-// }
 
 .cart-item-remove {
   color: #fdcff3;
@@ -32,6 +27,19 @@
   font-size: 0.8rem;
 }
 
+.close-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  color: #fdcff3;
+  border: none;
+  &:active,
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
 .clear-btn {
   font-size: 1rem;
   color: $mainBlack;
@@ -49,5 +57,39 @@
   &:hover {
     background: $mainBlack;
     color: #fdcff3;
+  }
+}
+
+//hidden cart
+
+.cart-icon-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  &:hover .cart-btn {
+    color: $mainYellow;
+  }
+}
+
+.cart-btn {
+  position: relative;
+  color: $mainPink;
+  &:active,
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.item-count {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 991px) {
+  .cart-icon-container {
+    margin-top: 7rem;
   }
 }
