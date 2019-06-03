@@ -25,11 +25,11 @@
 }
 
 .cart-info {
+  background: $mainWhite;
   border: 0.1rem solid $mainBlack;
   color: $mainBlack;
   border-radius: 0.25rem;
   padding: 0.4rem 0.6rem;
-  cursor: pointer;
   &:hover {
     background: $mainPink;
     border-color: $mainPink;

@@ -4,7 +4,7 @@ import Title from "../utilities/Title";
 import Button from "../utilities/Button";
 import Cart from "./../Cart/Cart";
 
-const Header = () => {
+const Header = ({ displayCart }) => {
   return (
     <div className="container-fluid">
       <div className="row max-height justify-content-center align-items-center">
@@ -12,7 +12,7 @@ const Header = () => {
           <Title text1="welcome to our" text2="sweet store" />
           <Button link="#store" />
         </div>
-        <Cart />
+        {displayCart && <Cart />}
       </div>
     </div>
   );

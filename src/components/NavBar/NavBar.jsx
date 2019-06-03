@@ -2,7 +2,7 @@ import React from "react";
 import "./NavBar.scss";
 import logo from "../../img/logo.svg";
 
-const NavBar = () => {
+const NavBar = ({ toggleCartDisplay }) => {
   return (
     <nav className="navbar navbar-expand-lg px-4">
       <a className="navbar-brand ml-lg-3" href="/">
@@ -47,15 +47,18 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="nav-info-items d-none d-xl-flex mr-5">
-          {/* single info */}
+          {/* phone info */}
           <div className="nav-info align-items-center d-flex justify-content-between mx-lg-5">
             <span className="info-icon mx-lg-3">
               <i className="fas fa-phone" />
             </span>
             <p className="mb-0">+ 123 456 789</p>
           </div>
-          {/* single info */}
-          <div className="cart-info nav-info align-items-center d-flex justify-content-between mx-lg-5">
+          {/* cart info */}
+          <button
+            onClick={toggleCartDisplay}
+            className="cart-info nav-info align-items-center d-flex justify-content-between mx-lg-5"
+          >
             <span className="cart-info__icon mx-lg-3">
               <i className="fas fa-shopping-cart" />
             </span>
@@ -63,7 +66,7 @@ const NavBar = () => {
               <span id="item-count">2</span>
               items - $<span className="item-total">10.49</span>
             </p>
-          </div>
+          </button>
         </div>
       </div>
     </nav>
