@@ -5,6 +5,7 @@ import About from "./pages/About/About";
 import Store from "./pages/Store/Store";
 import Services from "./pages/Services/Services";
 import Order from "./pages/Order";
+import Footer from "./pages/Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Store />
       <Services />
       <Order />
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,15 @@
+@import "../../index.scss";
+
+.contact-column {
+  background-color: $mainGrey;
+}
+
+.contact-icon {
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: $mainGrey;
+  color: $mainBlack;
+  &:hover {
+    color: $mainPink;
+  }
+}

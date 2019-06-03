@@ -1,0 +1,21 @@
+@import "../../index.scss";
+
+.media-column {
+  background-color: $mainBlack;
+}
+
+.media-title {
+  color: $mainPink;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.media-icon {
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: $mainBlack;
+  color: $mainWhite;
+  &:hover {
+    color: $mainPink;
+  }
+}
