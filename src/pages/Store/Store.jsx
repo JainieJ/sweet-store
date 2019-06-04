@@ -19,9 +19,7 @@ class Store extends Component {
     itemCount: 0
   };
   toggleCartDisplay = () => {
-    this.setState({ showCart: !this.state.showCart }, () =>
-      console.log(this.state.showCart)
-    );
+    this.setState({ showCart: !this.state.showCart });
   };
   addToCart = item => {
     const { itemsInCart, totalAmount, itemCount } = this.state;
@@ -86,7 +84,6 @@ class Store extends Component {
   render() {
     const {
       search,
-      items,
       filtered,
       showCart,
       itemsInCart,
