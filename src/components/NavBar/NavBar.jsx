@@ -46,28 +46,6 @@ const NavBar = ({ toggleCartDisplay }) => {
             </a>
           </li>
         </ul>
-        <div className="nav-info-items d-none d-xl-flex mr-5">
-          {/* phone info */}
-          <div className="nav-info align-items-center d-flex justify-content-between mx-lg-5">
-            <span className="info-icon mx-lg-3">
-              <i className="fas fa-phone" />
-            </span>
-            <p className="mb-0">+ 123 456 789</p>
-          </div>
-          {/* cart info */}
-          <button
-            onClick={toggleCartDisplay}
-            className="cart-info nav-info align-items-center d-flex justify-content-between mx-lg-5"
-          >
-            <span className="cart-info__icon mx-lg-3">
-              <i className="fas fa-shopping-cart" />
-            </span>
-            <p className="mr-lg-3 mb-0 text-capitalize">
-              <span id="item-count">2</span>
-              items - $<span className="item-total">10.49</span>
-            </p>
-          </button>
-        </div>
       </div>
     </nav>
   );

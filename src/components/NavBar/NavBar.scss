@@ -17,25 +17,3 @@
     color: $mainBlack;
   }
 }
-//  cart style
-
-.cart-info__icon {
-  color: $mainBlack;
-  cursor: pointer;
-}
-
-.cart-info {
-  background: $mainWhite;
-  border: 0.1rem solid $mainBlack;
-  color: $mainBlack;
-  border-radius: 0.25rem;
-  padding: 0.4rem 0.6rem;
-  &:hover {
-    background: $mainPink;
-    border-color: $mainPink;
-    color: $mainWhite;
-    .cart-info__icon {
-      color: $mainWhite;
-    }
-  }
-}

@@ -11,9 +11,9 @@ const CartItem = ({
         src={img}
         alt="store item"
         className="img-fluid rounded-circle"
-        style={{ height: "50px", width: "50px" }}
+        style={{ height: "5rem", width: "5rem" }}
       />
-      <div className="item-text font-weight-bold">
+      <div className="item-text text-center font-weight-bold mx-3 align-self-center">
         <p className="mb-0">
           {title} <span className="small">x</span> {quantity}
         </p>
