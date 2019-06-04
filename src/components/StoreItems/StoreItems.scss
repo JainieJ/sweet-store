@@ -22,14 +22,20 @@
 .store-img {
   transition: all 1s ease-in-out;
 }
-
+.btn {
+  &:active,
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
 .store-item-icon {
   position: absolute;
   bottom: 0;
   right: 0;
   padding: 0.8rem;
   background: $mainYellow;
-  border-top-left-radius: 1rem;
+  border-top-left-radius: 1rem !important;
   transition: all 1s ease-in-out;
   transform: translate(100%, 100%);
   &:hover {

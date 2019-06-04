@@ -5,6 +5,7 @@
 .cart {
   position: fixed;
   min-height: 10rem;
+  max-height: 50vh;
   background: rgb(142, 123, 117);
   top: 0;
   right: 0;
@@ -12,19 +13,7 @@
   width: 22rem;
   padding: 2rem 1.5rem;
   z-index: 1;
-}
-
-.cart-item-remove {
-  color: #fdcff3;
-  transition: all 1s ease-in-out;
-  &:hover {
-    transform: scale(1.2);
-    color: $mainBlack;
-  }
-}
-
-.cart-item-price {
-  font-size: 0.8rem;
+  overflow-y: scroll;
 }
 
 .close-btn {

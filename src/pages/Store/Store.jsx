@@ -13,12 +13,39 @@ class Store extends Component {
     search: "",
     items: storeItems,
     filtered: storeItems,
-    showCart: false
+    showCart: false,
+    itemsInCart: [],
+    totalAmount: 0,
+    itemCount: 0
   };
   toggleCartDisplay = () => {
     this.setState({ showCart: !this.state.showCart }, () =>
       console.log(this.state.showCart)
     );
+  };
+  addToCart = item => {
+    const { itemsInCart, totalAmount, itemCount } = this.state;
+    const totalItems = [...itemsInCart];
+    //check if the item is already in the cart;
+    const presentItem = totalItems.find(i => i.id === item.id);
+    if (presentItem) {
+      presentItem.quantity += 1;
+    } else {
+      const newItem = {
+        id: item.id,
+        img: item.img,
+        price: item.price,
+        title: item.title,
+        quantity: item.quantity
+      };
+      totalItems.push(newItem);
+    }
+    this.setState({
+      showCart: true,
+      itemsInCart: totalItems,
+      totalAmount: totalAmount + Number(item.price),
+      itemCount: itemCount + 1
+    });
   };
   handleSort = ({ target: { name: title } }) => {
     //destruturing of event object
@@ -44,12 +71,40 @@ class Store extends Component {
     );
     this.setState({ filtered, search: "" });
   };
+  handleDelete = (id, price, quantity) => {
+    const { itemsInCart, totalAmount, itemCount } = this.state;
+    const filtered = itemsInCart.filter(item => item.id !== id);
+    this.setState({
+      itemsInCart: filtered,
+      totalAmount: totalAmount - Number(price) * Number(quantity),
+      itemCount: itemCount - Number(quantity)
+    });
+  };
+  handleClear = () => {
+    this.setState({ itemsInCart: [], totalAmount: 0, itemCount: 0 });
+  };
   render() {
-    const { search, items, filtered, showCart } = this.state;
+    const {
+      search,
+      items,
+      filtered,
+      showCart,
+      itemsInCart,
+      totalAmount,
+      itemCount
+    } = this.state;
     return (
       <section id="store" className="store py-5">
         {/* cart */}
-        <Cart toggleCartDisplay={this.toggleCartDisplay} showCart={showCart} />
+        <Cart
+          showCart={showCart}
+          itemsInCart={itemsInCart}
+          totalAmount={totalAmount}
+          itemCount={itemCount}
+          toggleCartDisplay={this.toggleCartDisplay}
+          handleDelete={this.handleDelete}
+          handleClear={this.handleClear}
+        />
         <div className="container">
           {/* title */}
           <div className="row my-3">
@@ -86,7 +141,13 @@ class Store extends Component {
                 <h2>Search returned no result. Please, try again</h2>
               </div>
             ) : (
-              filtered.map(item => <StoreItems key={item.id} item={item} />)
+              filtered.map(item => (
+                <StoreItems
+                  key={item.id}
+                  item={item}
+                  addToCart={this.addToCart}
+                />
+              ))
             )}
           </div>
         </div>

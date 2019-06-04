@@ -1,0 +1,14 @@
+@import "../../index.scss";
+
+.cart-item-price {
+  font-size: 0.8rem;
+}
+
+.cart-item-remove {
+  color: #fdcff3;
+  transition: all 1s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    color: $mainBlack;
+  }
+}
